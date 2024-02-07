@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.form input {
+  border: none;
+}
+
+.form button {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+@media (min-width: 64rem) {
+  .form input {
+    border: none;
+    min-width: 60vh;
+  }
+}

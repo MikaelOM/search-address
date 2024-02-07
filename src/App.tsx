@@ -1,33 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
+import { Form } from './components/Form'
+
 import './App.css'
+export interface AddressType {
+  cep: string;
+  uf: string;
+  logradouro: string;
+  bairro: string;
+  localidade: string;
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [addressData, setAddressData ] = useState<AddressType>()
+
+  function handleData(dataAddress: AddressType) {
+    setAddressData(dataAddress)
+  }
+  
+  console.log('==> addressData', addressData)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='contentPage'>
+        <h1>Find address with zip code:</h1>
+        <Form setAddressData={handleData}/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
