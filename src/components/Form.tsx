@@ -1,5 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
+import { AiOutlineSend } from "react-icons/ai"
+
 import { AddressType } from '../App';
+
 import './Form.css'
 
 interface FormProps {
@@ -7,22 +10,23 @@ interface FormProps {
 }
 
 export function Form({ setAddressData }: FormProps) {
-  const [address, setAddress] = useState('')
+  const [dataForSearchAddress, setDataForSearchAddress] = useState('')
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
-    setAddress(event.target.value)
+    setDataForSearchAddress(event.target.value)
   }
   
   function handleSubmitAddressForm(event: FormEvent) {
     event.preventDefault()
-    fetch(`https://viacep.com.br/ws/${address}/json/`)
+
+    fetch(`https://viacep.com.br/ws/${dataForSearchAddress}/json/`)
     .then(response => response.json())
     .then(data => {
-        if (data.erro) {
-            console.log("Endereço não encontrado.")
-        } else {
-            setAddressData(data)
-        }
+      if (data.erro) {
+        console.log("Endereço não encontrado.")
+      } else {
+        setAddressData(data)
+      }
     })
     .catch(error => {
         console.error('Ocorreu um erro:', error)
@@ -36,11 +40,13 @@ export function Form({ setAddressData }: FormProps) {
           type="text" 
           id="address" 
           name="address"
-          value={address}
+          value={dataForSearchAddress}
           onChange={handleInputChange}
           required
         />
-        <button type='submit'>Send</button>
+        <button type='submit'>
+          <AiOutlineSend size={28}/>
+        </button>
       </form>
     </div>
   )

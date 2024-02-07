@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Form } from './components/Form'
+import { ShowDataLocality } from './components/ShowDataLocality'
 
 import './App.css'
 export interface AddressType {
@@ -16,14 +17,22 @@ function App() {
   function handleData(dataAddress: AddressType) {
     setAddressData(dataAddress)
   }
-  
-  console.log('==> addressData', addressData)
 
+  function handleToGoBack() {
+    setAddressData(undefined)
+  }
+  
   return (
     <>
       <div className='contentPage'>
-        <h1>Find address with zip code:</h1>
+        <h1>Find address with zip code</h1>
         <Form setAddressData={handleData}/>
+        { addressData &&
+          <ShowDataLocality 
+            dataAddress={addressData}
+            handleToGoBack={handleToGoBack}
+          />
+        }
       </div>
     </>
   )

@@ -1,0 +1,37 @@
+.data-address-container {
+  background-color: #242424;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.data-address-header {
+  width: 80%;
+  display: flex;
+  gap: 1.8rem;
+}
+
+.data-address-header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #242424;
+  width: 35px;
+  margin: 30px 0;
+  color: #747bff;
+  border:none;
+  cursor: pointer;
+}
+
+.data-address-container section {
+  width: 310px;
+  text-align: left;
+}
+
+@media(min-width: 64rem) {
+  .data-address-container {
+    min-width: 70vh;
+  }
+}
