@@ -4,3 +4,7 @@
   justify-content: center;
   align-items: center;
 }
+
+.contentPage h1 {
+  text-align: center;
+}

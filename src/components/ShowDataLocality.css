@@ -8,9 +8,9 @@
 }
 
 .data-address-header {
-  width: 80%;
+  width: 100%;
   display: flex;
-  gap: 1.8rem;
+  flex-direction: column;
 }
 
 .data-address-header button {
@@ -19,19 +19,42 @@
   justify-content: center;
   background-color: #242424;
   width: 35px;
-  margin: 30px 0;
   color: #747bff;
   border:none;
   cursor: pointer;
 }
 
 .data-address-container section {
-  width: 310px;
+  width: 350px;
   text-align: left;
+}
+
+.data-address-container section p {
+  padding: 0 1.5rem;
 }
 
 @media(min-width: 64rem) {
   .data-address-container {
     min-width: 70vh;
+  }
+
+  .data-address-container section {
+    width: 310px;
+  }
+
+  .data-address-header {
+    flex-direction: row;
+  }
+
+  .data-address-header button {
+    margin: 30px 0;
+  }
+
+  .data-address-container section p {
+    padding: 0;
+  }
+
+  .data-address-header {
+    gap: 1.8rem;
   }
 }
