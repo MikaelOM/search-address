@@ -1,11 +1,11 @@
-.form {
+form {
   display: flex;
   flex-direction: row;
   min-width: 40vh;
   gap: 0.5rem;
 }
 
-.form input {
+form input {
   height: 29.33px;
   width: 90%;
   border: none;
@@ -13,12 +13,12 @@
   padding: 0 0.5rem;
 }
 
-.form input:focus-visible {
+form input:focus-visible {
   border: solid 1px #747bff;
   outline: none;
 }
 
-.form button {
+form button {
   border: none;
   background-color: #242424;
   color: #747bff;
@@ -29,7 +29,7 @@
 }
 
 @media (min-width: 64rem) {
-  .form input {
+  form input {
     border: none;
     min-width: 60vh;
     margin-left: 1.5rem;
