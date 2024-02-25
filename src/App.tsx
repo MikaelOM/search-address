@@ -12,14 +12,17 @@ export interface AddressType {
 }
 
 function App() {
-  const [addressData, setAddressData ] = useState<AddressType>()
+  const [addressData, setAddressData] = useState<AddressType>()
+  const [isOpen, setIsOpen] = useState(false)
 
   function handleData(dataAddress: AddressType) {
     setAddressData(dataAddress)
+    setIsOpen(true)
   }
 
   function handleToGoBack() {
-    setAddressData(undefined)
+    setIsOpen(false)
+    setTimeout(() => setAddressData(undefined), 230)
   }
   
   return (
@@ -31,6 +34,7 @@ function App() {
           <ShowDataLocality 
             dataAddress={addressData}
             handleToGoBack={handleToGoBack}
+            isOpenModal={isOpen}
           />
         }
       </div>

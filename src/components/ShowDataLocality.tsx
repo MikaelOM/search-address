@@ -6,13 +6,14 @@ import './ShowDataLocality.css'
 interface ShowDataLocalityProps {
   dataAddress: AddressType
   handleToGoBack: () => void
+  isOpenModal: boolean
 }
 
-export function ShowDataLocality({ dataAddress, handleToGoBack }: ShowDataLocalityProps) {
+export function ShowDataLocality({ dataAddress, handleToGoBack, isOpenModal }: ShowDataLocalityProps) {
   console.log(!dataAddress)
   return (
     <div className="data-address-container">
-      <div className="data-address-content">
+      <div className={`data-address-content ${!isOpenModal && 'close'}`}>
         <div className="data-address-header">
           <button type="button" onClick={handleToGoBack}>
             <HiArrowSmLeft size={28}/>

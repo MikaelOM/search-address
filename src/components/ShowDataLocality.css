@@ -20,9 +20,17 @@
   position: absolute;
   left: 100%;
   top: 50%;
-  transform: translate(-50%, -50%);
   border-radius: 5px;
   animation: slideIn 0.5s forwards;
+  transform: translate(-50%, -50%);
+}
+
+.data-address-container .close {
+  animation: slideOut 0.5s forwards;
+}
+
+.data-address-content h1 {
+  text-align: left!important;
 }
 
 .data-address-header {
@@ -53,7 +61,13 @@
 
 @media(min-width: 64rem) {
   .data-address-container {
-    min-width: 70vh;
+    width: 35%;
+    overflow: hidden;
+    left: 35rem;
+  }
+
+  .data-address-content h1 {
+    text-align: center;
   }
 
   .data-address-container section {
@@ -83,5 +97,14 @@
   }
   to {
     left: 50%;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 100%;
   }
 }
