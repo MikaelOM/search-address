@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { AiOutlineSend } from "react-icons/ai"
 
 import { AddressType } from '../App';
@@ -11,11 +11,21 @@ interface FormProps {
 
 export function Form({ setAddressData }: FormProps) {
   const [dataForSearchAddress, setDataForSearchAddress] = useState('')
+  const [inputValue, setInputValue] = useState('')
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+
+    if(error !== '' && inputValue !== dataForSearchAddress) {
+      setError('')
+    }
+  
+  }, [dataForSearchAddress, error, inputValue])
+
 
   const applyMask = (postalCode: string) => {
     return postalCode.replace(/\D/g, '').replace(/^(\d{5})(\d)/, '$1-$2').slice(0, 9);
   }
-
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
     const postalCodeWithMask = applyMask(event.target.value)
@@ -29,33 +39,29 @@ export function Form({ setAddressData }: FormProps) {
   
   function handleSubmitAddressForm(event: FormEvent) {
     event.preventDefault()
-    if (!validateCep()) return
+    setInputValue(dataForSearchAddress)
+    
+    if (!validateCep()) return setError('Cep inválido')
 
     fetch(`https://viacep.com.br/ws/${dataForSearchAddress}/json/`)
     .then(response => response.json())
     .then(data => {
       if (data.erro) {
-        console.log("Endereço não encontrado.")
-      } else {
-        setAddressData(data)
-      }
-      console.log('==> passou')
-      
+        return setError("Endereço não encontrado.")
+      } 
+       
+      return setAddressData(data)      
     })
     .catch(error => {
         console.error('Ocorreu um erro:', error)
     })
-    console.log("sem erro");
-    
   }
-
-  console.log('dataForSearchAddress', dataForSearchAddress)
-  console.log('validatecep', validateCep())
 
   return (
     <div>
       <form id="form-cep" className={!validateCep() ? 'form-invalid-cep': ''} onSubmit={handleSubmitAddressForm}>
         <input 
+          className={error !== '' ? 'inputError' : ''}
           type="text" 
           id="address" 
           name="address"
@@ -63,10 +69,14 @@ export function Form({ setAddressData }: FormProps) {
           onChange={handleInputChange}
           required
         />
-        <button type='submit'>
+        <button type='submit' className={error !== '' ? 'buttonError' : ''}>
           <AiOutlineSend size={28}/>
         </button>
       </form>
+      {error !== '' && (
+        <p className='errorMessage'>{error}</p>
+      )
+      }
     </div>
   )
 }

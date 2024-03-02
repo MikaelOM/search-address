@@ -28,6 +28,19 @@ form button {
   cursor: pointer;
 }
 
+.inputError {
+  border: 1px solid red;
+}
+
+.buttonError {
+  color: red;
+}
+
+.errorMessage {
+  color: red;
+  margin: 0.5rem 0 0 1.5rem;
+}
+
 @media (min-width: 64rem) {
   form input {
     border: none;
