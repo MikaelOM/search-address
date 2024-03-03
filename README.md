@@ -1,30 +1,98 @@
-# React + TypeScript + Vite
+<div>
+<h1 align="center">Search Address 
+</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h3 align="center">Content List</h3>
 
-Currently, two official plugins are available:
+ <p align="center">
+ <a href="#objetivo">Goals</a> •
+ <a href="#desc">Project Description</a> • 
+ <a href="#tecnologias">Technologies</a> • 
+ <a href="#requisitos">Prerequisites</a> • 
+ <a href="#init">Starting the application</a> • 
+ <a href="#autor">Author</a>
+</p>
+  
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<br/>
 
-## Expanding the ESLint configuration
+<a id="objetivo"></a>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 💡 Goals
 
-- Configure the top-level `parserOptions` property like this:
+<br/>
+<p> The objective of this project was to explore fetch requests, unit testing with jest and a little css animation.</p><br/>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+<a id="desc"></a>
+
+### 📝 Project Description
+
+<br/>
+<p> 
+  This is a simple application that searches for addresses based on the zip code entered, using React with typescript.
+</p>
+
+<a id="tecnologias"></a><br/>
+
+### 🛠 Technologies
+
+<br/>
+<div align="center">
+
+![React](https://img.shields.io/badge/-React-blue?style=flat-square&logo=React&logoColor=%23ffffff)
+![Git](https://img.shields.io/badge/-Git-%23F05032?style=flat-square&logo=git&logoColor=%23ffffff)
+![TypeScript](https://img.shields.io/badge/-TypeScript-blue?style=flat-square&logo=TypeScript&logoColor=%23ffffff)
+![Jest](https://img.shields.io/badge/-Jest-green?style=flat-square&logo=Jest&logoColor=%23ffffff)
+![CSS3](https://img.shields.io/badge/-CSS-blue?style=flat-square&logo=css3)
+
+
+</div>
+<a id="requisitos"></a><br/>
+
+### 📎 Prerequisites
+
+<br/>
+
+- Git
+- Browser
+
+<a id="init"></a><br/>
+
+### 🎮 Starting the application
+
+<br/>
+
+First you will need to install the project's dependencies, to do this just type this command in the terminal:
+```
+npm i
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+To start the application, use the command:
+```
+npm run dev
+```
+
+To run the application tests, use the command:
+```
+npm run test
+```
+
+<a id="autor"></a><br/>
+
+### 🙋‍♂️ Author
+
+<p align="center">Mikael Magalhães</p>
+
+<div align="center">
+
+[<img align="center" alt="bilgehangecici  | LinkedIn" width="35px" src="https://i.pinimg.com/originals/de/b4/6f/deb46f02a59e3b3a2aa58fac16290d63.gif" link=https://https://www.linkedin.com/in/mikael-magalhães-207842173 target="_blank"/>][linkedin]
+<a href="mailto:mikael.omagalhaes@gmail.com">
+<img align="center" alt="Jugal Bhatt | Gmail" width="34px" src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Gmail.svg" />
+</a>
+[<img align="center" alt="bilgehangecici | Instagram" width="35px" src="https://thumbs.gfycat.com/OrnateOrneryFoal-max-1mb.gif" target="_blank" />][instagram]
+
+</div>
+ 
+[linkedin]:https://www.linkedin.com/in/mikael-magalhães
+[instagram]:https://www.instagram.com/mikael_henrique__/
