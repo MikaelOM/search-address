@@ -3,7 +3,7 @@ import { AiOutlineSend } from "react-icons/ai"
 
 import { AddressType } from '../App';
 
-import './Form.css'
+// import './Form.css'
 
 interface FormProps {
   setAddressData: (addressData: AddressType) => void;
