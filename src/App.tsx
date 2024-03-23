@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react';
 import { Form } from './components/Form'
 import { ShowDataLocality } from './components/ShowDataLocality'
