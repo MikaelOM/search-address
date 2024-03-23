@@ -1,3 +1,3 @@
 export function Teste() {
-  return <h1>Hello</h1>
+  return <h1>Teste</h1>
 }

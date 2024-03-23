@@ -1,9 +1,12 @@
-import { render } from '@testing-library/react'
-import { Teste } from './Teste'
+/**
+ * @jest-environment jsdom
+ */
 
-describe('Teste Component', () => {
-  it('should return a JSX element with the text "Hello"', () => {
-    const { getByText } = render(<Teste />)
-    expect(getByText('Hello')).toBeTruthy()
-  });
-});
+import { render } from "@testing-library/react"
+
+import { Teste } from "./Teste"
+test('test', () => {
+  const { getByText } = render(<Teste/>)
+
+  expect(getByText('Teste')).toBeTruthy()
+})
