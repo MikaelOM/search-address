@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-undef
 module.export = {
-  testEnvironment: 'jest-environment-jsdom',
+  present: 'ts-jest/presets/js-with-ts',
+  testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/.jest/setup-tests.ts'],
-  moduleNameMapper: {
-    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
-  }
+  // moduleFileExtensions: ["js", "jsx", "ts", "tsx"],
+  // testPathIgnorePatterns: ["/node_modules/", "\\.css$"]
 }

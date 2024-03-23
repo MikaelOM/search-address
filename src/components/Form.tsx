@@ -3,7 +3,7 @@ import { AiOutlineSend } from "react-icons/ai"
 
 import { AddressType } from '../App';
 
-import './Form.css'
+import styles from './Form.module.css'
 
 interface FormProps {
   setAddressData: (addressData: AddressType) => void;
@@ -59,7 +59,8 @@ export function Form({ setAddressData }: FormProps) {
 
   return (
     <div>
-      <form id="form-cep" className={!validateCep() ? 'form-invalid-cep': ''} onSubmit={handleSubmitAddressForm}>
+      <h1>Teste</h1>
+      <form id="form-cep" className={!validateCep() ? styles.formInvalidCep : ''} onSubmit={handleSubmitAddressForm}>
         <input 
           className={error !== '' ? 'inputError' : ''}
           type="text" 
